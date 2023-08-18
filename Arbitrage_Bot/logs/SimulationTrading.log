@@ -1,0 +1,13 @@
+[2023-08-16 23:40:33][INFO] Starting simulation with total balance: 200.0
+[2023-08-16 23:42:09][INFO] Starting simulation with total balance: 200.0
+[2023-08-16 23:48:41][INFO] Starting simulation with total balance: 200.0
+[2023-08-16 23:48:46][INFO] Simulated trade: Bought 0.0 ETH/USDT on bitstamp and sold on bybit. Profit/Loss: 0.0
+[2023-08-16 23:48:46][INFO] Balance after trade: 0.0
+[2023-08-16 23:48:46][INFO] Simulated trade: Bought 0.0 BTC/USDT on bitstamp and sold on bybit. Profit/Loss: 0.0
+[2023-08-16 23:48:46][INFO] Balance after trade: 0.0
+[2023-08-16 23:48:46][INFO] Simulated trade: Bought 0.0 ETH/USDC on bitstamp and sold on bybit. Profit/Loss: 0.0
+[2023-08-16 23:48:46][INFO] Balance after trade: 0.0
+[2023-08-16 23:48:46][INFO] Finished simulation with total balance: 0.0
+[2023-08-17 00:30:00][INFO] Starting simulation with the following balances:
+[2023-08-17 00:30:00][INFO] Balance for bybit: XRP: 500.0, BTC: 3500.0, LTC: 500.0, USDT: 1500.0, ETH: 1500.0, EUR: 500.0, USDC: 1000.0, WBTC: 500.0, ALGO: 500.0
+[2023-08-17 00:30:00][INFO] Balance for bitstamp: XRP: 500.0, BTC: 3500.0, LTC: 500.0, USDT: 1500.0, ETH: 1500.0, EUR: 500.0, USDC: 1000.0, WBTC: 500.0, ALGO: 500.0

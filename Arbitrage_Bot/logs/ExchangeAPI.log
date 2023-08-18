@@ -1,0 +1,148 @@
+[2023-08-16 23:10:32][INFO] Initialized bybit successfully.
+[2023-08-16 23:10:32][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:17:39][INFO] Initialized bybit successfully.
+[2023-08-16 23:17:39][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:21:01][INFO] Initialized bybit successfully.
+[2023-08-16 23:21:01][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:21:07][INFO] Fetched price for XRP/USDT from bybit: 0.5965
+[2023-08-16 23:21:07][INFO] Fetched price for XRP/USDT from bitstamp: 0.59676
+[2023-08-16 23:21:07][INFO] Fetched price for USDT/EUR from bybit: 0.9206
+[2023-08-16 23:21:07][INFO] Fetched price for USDT/EUR from bitstamp: 0.91742
+[2023-08-16 23:21:07][INFO] Fetched price for XRP/BTC from bybit: 2.049e-05
+[2023-08-16 23:21:07][INFO] Fetched price for XRP/BTC from bitstamp: 2.052e-05
+[2023-08-16 23:21:08][INFO] Fetched price for ALGO/BTC from bybit: 3.56e-06
+[2023-08-16 23:21:08][INFO] Fetched price for ALGO/BTC from bitstamp: 3.57e-06
+[2023-08-16 23:21:09][INFO] Fetched price for XLM/BTC from bybit: 4.4085e-06
+[2023-08-16 23:21:09][INFO] Fetched price for XLM/BTC from bitstamp: 4.46e-06
+[2023-08-16 23:21:09][INFO] Fetched price for ETH/USDT from bybit: 1822.07
+[2023-08-16 23:21:09][INFO] Fetched price for ETH/USDT from bitstamp: 1822.1
+[2023-08-16 23:21:09][INFO] Fetched price for ETH/BTC from bybit: 0.062564
+[2023-08-16 23:21:10][INFO] Fetched price for ETH/BTC from bitstamp: 0.06257026
+[2023-08-16 23:21:10][INFO] Fetched price for BTC/USDC from bybit: 29079.71
+[2023-08-16 23:21:10][INFO] Fetched price for BTC/USDC from bitstamp: 29101.0
+[2023-08-16 23:21:11][INFO] Fetched price for USDC/USDT from bybit: 1.0011
+[2023-08-16 23:21:11][INFO] Fetched price for USDC/USDT from bitstamp: 1.00129
+[2023-08-16 23:21:11][INFO] Fetched price for LTC/BTC from bybit: 0.002644
+[2023-08-16 23:21:11][INFO] Fetched price for LTC/BTC from bitstamp: 0.00264713
+[2023-08-16 23:21:28][INFO] Initialized bybit successfully.
+[2023-08-16 23:21:28][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:21:35][INFO] Fetched price for BTC/USDC from bybit: 29079.07
+[2023-08-16 23:21:35][INFO] Fetched price for BTC/USDC from bitstamp: 29101.0
+[2023-08-16 23:21:36][INFO] Fetched price for ETH/BTC from bybit: 0.062584
+[2023-08-16 23:21:36][INFO] Fetched price for ETH/BTC from bitstamp: 0.06257026
+[2023-08-16 23:21:36][INFO] Fetched price for ETH/USDT from bybit: 1821.98
+[2023-08-16 23:21:36][INFO] Fetched price for ETH/USDT from bitstamp: 1822.1
+[2023-08-16 23:21:37][INFO] Fetched price for XLM/BTC from bybit: 4.4085e-06
+[2023-08-16 23:21:37][INFO] Fetched price for XLM/BTC from bitstamp: 4.46e-06
+[2023-08-16 23:21:38][INFO] Fetched price for LTC/BTC from bybit: 0.002644
+[2023-08-16 23:21:38][INFO] Fetched price for LTC/BTC from bitstamp: 0.00264713
+[2023-08-16 23:21:38][INFO] Fetched price for USDT/EUR from bybit: 0.9205
+[2023-08-16 23:21:38][INFO] Fetched price for USDT/EUR from bitstamp: 0.91742
+[2023-08-16 23:21:39][INFO] Fetched price for ETH/USDC from bybit: 1819.47
+[2023-08-16 23:21:39][INFO] Fetched price for ETH/USDC from bitstamp: 1821.7
+[2023-08-16 23:21:39][INFO] Fetched price for XRP/USDT from bybit: 0.5965
+[2023-08-16 23:21:39][INFO] Fetched price for XRP/USDT from bitstamp: 0.59676
+[2023-08-16 23:21:40][INFO] Fetched price for BTC/USDT from bybit: 29120.01
+[2023-08-16 23:21:40][INFO] Fetched price for BTC/USDT from bitstamp: 29123.0
+[2023-08-16 23:21:40][INFO] Fetched price for WBTC/BTC from bybit: 1.0001
+[2023-08-16 23:21:40][INFO] Fetched price for WBTC/BTC from bitstamp: 0.9919
+[2023-08-16 23:29:12][INFO] Initialized bybit successfully.
+[2023-08-16 23:29:12][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:29:19][INFO] Fetched price for LTC/BTC from bybit: 0.002591
+[2023-08-16 23:29:19][INFO] Fetched price for LTC/BTC from bitstamp: 0.00255969
+[2023-08-16 23:29:20][INFO] Fetched price for XRP/BTC from bybit: 2.014e-05
+[2023-08-16 23:29:20][INFO] Fetched price for XRP/BTC from bitstamp: 2.014e-05
+[2023-08-16 23:29:20][INFO] Fetched price for XLM/BTC from bybit: 4.3419e-06
+[2023-08-16 23:29:20][INFO] Fetched price for XLM/BTC from bitstamp: 4.33e-06
+[2023-08-16 23:29:21][INFO] Fetched price for ETH/USDC from bybit: 1807.19
+[2023-08-16 23:29:21][INFO] Fetched price for ETH/USDC from bitstamp: 1811.3
+[2023-08-16 23:29:22][INFO] Fetched price for BTC/USDC from bybit: 28954.95
+[2023-08-16 23:29:22][INFO] Fetched price for BTC/USDC from bitstamp: 28937.0
+[2023-08-16 23:29:23][INFO] Fetched price for ALGO/BTC from bybit: 3.47e-06
+[2023-08-16 23:29:23][INFO] Fetched price for ALGO/BTC from bitstamp: 3.57e-06
+[2023-08-16 23:29:23][INFO] Fetched price for USDC/USDT from bybit: 1.0012
+[2023-08-16 23:29:23][INFO] Fetched price for USDC/USDT from bitstamp: 1.00169
+[2023-08-16 23:29:23][INFO] Fetched price for ETH/USDT from bybit: 1809.9
+[2023-08-16 23:29:24][INFO] Fetched price for ETH/USDT from bitstamp: 1808.3
+[2023-08-16 23:29:24][INFO] Fetched price for WBTC/BTC from bybit: 0.9997
+[2023-08-16 23:29:24][INFO] Fetched price for WBTC/BTC from bitstamp: 0.9919
+[2023-08-16 23:29:24][INFO] Fetched price for XRP/USDT from bybit: 0.5863
+[2023-08-16 23:29:25][INFO] Fetched price for XRP/USDT from bitstamp: 0.5913
+[2023-08-16 23:40:27][INFO] Initialized bybit successfully.
+[2023-08-16 23:40:27][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:42:02][INFO] Initialized bybit successfully.
+[2023-08-16 23:42:02][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:42:09][INFO] Fetched price for LTC/BTC from bybit: 0.002578
+[2023-08-16 23:42:09][INFO] Fetched price for LTC/BTC from bitstamp: 0.0025713
+[2023-08-16 23:42:10][INFO] Fetched price for USDT/EUR from bybit: 0.9203
+[2023-08-16 23:42:10][INFO] Fetched price for USDT/EUR from bitstamp: 0.91758
+[2023-08-16 23:42:10][INFO] Fetched price for BTC/USDC from bybit: 28906.33
+[2023-08-16 23:42:10][INFO] Fetched price for BTC/USDC from bitstamp: 28926.0
+[2023-08-16 23:42:11][INFO] Fetched price for ETH/BTC from bybit: 0.062362
+[2023-08-16 23:42:11][INFO] Fetched price for ETH/BTC from bitstamp: 0.06237059
+[2023-08-16 23:42:12][INFO] Fetched price for ALGO/BTC from bybit: 3.5e-06
+[2023-08-16 23:42:12][INFO] Fetched price for ALGO/BTC from bitstamp: 3.5e-06
+[2023-08-16 23:42:12][INFO] Fetched price for XLM/BTC from bybit: 4.3382e-06
+[2023-08-16 23:42:13][INFO] Fetched price for XLM/BTC from bitstamp: 4.33e-06
+[2023-08-16 23:42:13][INFO] Fetched price for USDC/USDT from bybit: 1.0011
+[2023-08-16 23:42:13][INFO] Fetched price for USDC/USDT from bitstamp: 1.0007
+[2023-08-16 23:42:14][INFO] Fetched price for XRP/BTC from bybit: 2.026e-05
+[2023-08-16 23:42:14][INFO] Fetched price for XRP/BTC from bitstamp: 2.027e-05
+[2023-08-16 23:42:14][INFO] Fetched price for BTC/USDT from bybit: 28931.99
+[2023-08-16 23:42:14][INFO] Fetched price for BTC/USDT from bitstamp: 28939.0
+[2023-08-16 23:42:15][INFO] Fetched price for ETH/USDC from bybit: 1802.22
+[2023-08-16 23:42:15][INFO] Fetched price for ETH/USDC from bitstamp: 1804.3
+[2023-08-16 23:48:35][INFO] Initialized bybit successfully.
+[2023-08-16 23:48:35][INFO] Initialized bitstamp successfully.
+[2023-08-16 23:48:42][INFO] Fetched price for LTC/BTC from bybit: 0.00259
+[2023-08-16 23:48:42][INFO] Fetched price for LTC/BTC from bitstamp: 0.00257
+[2023-08-16 23:48:42][INFO] Fetched price for ETH/USDT from bybit: 1807.0
+[2023-08-16 23:48:42][INFO] Fetched price for ETH/USDT from bitstamp: 1800.5
+[2023-08-16 23:48:43][INFO] Fetched price for BTC/USDT from bybit: 28941.8
+[2023-08-16 23:48:43][INFO] Fetched price for BTC/USDT from bitstamp: 28933.0
+[2023-08-16 23:48:43][INFO] Fetched price for WBTC/BTC from bybit: 0.9997
+[2023-08-16 23:48:43][INFO] Fetched price for WBTC/BTC from bitstamp: 0.9919
+[2023-08-16 23:48:43][INFO] Fetched price for ETH/USDC from bybit: 1805.26
+[2023-08-16 23:48:43][INFO] Fetched price for ETH/USDC from bitstamp: 1798.5
+[2023-08-16 23:48:44][INFO] Fetched price for XRP/USDT from bybit: 0.5878
+[2023-08-16 23:48:44][INFO] Fetched price for XRP/USDT from bitstamp: 0.58873
+[2023-08-16 23:48:44][INFO] Fetched price for ALGO/BTC from bybit: 3.52e-06
+[2023-08-16 23:48:44][INFO] Fetched price for ALGO/BTC from bitstamp: 3.55e-06
+[2023-08-16 23:48:45][INFO] Fetched price for XLM/BTC from bybit: 4.3497e-06
+[2023-08-16 23:48:45][INFO] Fetched price for XLM/BTC from bitstamp: 4.35e-06
+[2023-08-16 23:48:45][INFO] Fetched price for USDC/USDT from bybit: 1.0011
+[2023-08-16 23:48:45][INFO] Fetched price for USDC/USDT from bitstamp: 1.0007
+[2023-08-16 23:48:46][INFO] Fetched price for USDT/EUR from bybit: 0.9204
+[2023-08-16 23:48:46][INFO] Fetched price for USDT/EUR from bitstamp: 0.91767
+[2023-08-17 00:29:54][INFO] Initialized bybit successfully.
+[2023-08-17 00:29:54][INFO] Initialized bitstamp successfully.
+[2023-08-17 00:30:00][INFO] Fetched price for XRP/BTC from bybit: 2.013e-05
+[2023-08-17 00:30:00][INFO] Fetched price for XRP/BTC from bitstamp: 2.01e-05
+[2023-08-17 00:30:00][INFO] Fetched price for LTC/BTC from bybit: 0.002565
+[2023-08-17 00:30:00][INFO] Fetched price for LTC/BTC from bitstamp: 0.00255
+[2023-08-17 00:30:01][INFO] Fetched price for BTC/USDT from bybit: 28915.63
+[2023-08-17 00:30:01][INFO] Fetched price for BTC/USDT from bitstamp: 28903.0
+[2023-08-17 00:30:01][INFO] Fetched price for ETH/USDT from bybit: 1808.08
+[2023-08-17 00:30:01][INFO] Fetched price for ETH/USDT from bitstamp: 1805.9
+[2023-08-17 00:30:02][INFO] Fetched price for USDT/EUR from bybit: 0.92
+[2023-08-17 00:30:02][INFO] Fetched price for USDT/EUR from bitstamp: 0.9176
+[2023-08-17 00:30:02][INFO] Fetched price for BTC/USDC from bybit: 28891.91
+[2023-08-17 00:30:02][INFO] Fetched price for BTC/USDC from bitstamp: 28852.0
+[2023-08-17 00:30:03][INFO] Fetched price for ETH/USDC from bybit: 1806.3
+[2023-08-17 00:30:03][INFO] Fetched price for ETH/USDC from bitstamp: 1802.4
+[2023-08-17 00:30:03][INFO] Fetched price for ETH/BTC from bybit: 0.062515
+[2023-08-17 00:30:03][INFO] Fetched price for ETH/BTC from bitstamp: 0.06254499
+[2023-08-17 00:30:04][INFO] Fetched price for WBTC/BTC from bybit: 0.9996
+[2023-08-17 00:30:04][INFO] Fetched price for WBTC/BTC from bitstamp: 0.9919
+[2023-08-17 00:30:05][INFO] Fetched price for ALGO/BTC from bybit: 3.5e-06
+[2023-08-17 00:30:05][INFO] Fetched price for ALGO/BTC from bitstamp: 3.55e-06
+[2023-08-18 13:06:21][INFO] Initialized bybit successfully.
+[2023-08-18 13:06:21][INFO] Initialized bitstamp successfully.
+[2023-08-18 13:06:52][INFO] Initialized bybit successfully.
+[2023-08-18 13:06:52][INFO] Initialized bitstamp successfully.
+[2023-08-18 13:21:55][INFO] Initialized bybit successfully.
+[2023-08-18 13:21:55][INFO] Initialized bitstamp successfully.
+[2023-08-18 13:24:10][INFO] Initialized bybit successfully.
+[2023-08-18 13:24:10][INFO] Initialized bitstamp successfully.
+[2023-08-18 13:31:42][INFO] Initialized bybit successfully.
+[2023-08-18 13:31:42][INFO] Initialized bitstamp successfully.
