@@ -15,6 +15,7 @@ initial_balance = 1000  # Початковий баланс для імітац�
 simulation_trading = SimulationTrading(exchange_api, arbitrage_analyzer, initial_balance)
 
 print(simulation_trading.exchanges)
+print(simulation_trading.revert_to_dollars())
 
 """""
 

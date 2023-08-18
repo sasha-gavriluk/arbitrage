@@ -33,3 +33,31 @@
 [2023-08-18 16:32:11][INFO] Balance on bitstamp
 [2023-08-18 16:32:11][INFO] Pair BTC on balance 0.038085082073351866
 [2023-08-18 16:32:11][INFO] Pair USDT on balance 999.9619149179266
+[2023-08-18 17:23:49][INFO] Available exchanges: ['bybit', 'bitstamp']
+[2023-08-18 17:23:55][INFO] Converting balance for pair: BTC/USDT on exchange: bybit
+[2023-08-18 17:23:56][INFO] Converting balance for pair: ETH/USDT on exchange: bybit
+[2023-08-18 17:23:56][INFO] Converting balance for pair: BTC/USDT on exchange: bitstamp
+[2023-08-18 17:23:56][INFO] Converting balance for pair: ETH/USDT on exchange: bitstamp
+[2023-08-18 17:23:56][INFO] Your balance.
+[2023-08-18 17:23:56][INFO] Balance on bybit
+[2023-08-18 17:23:56][INFO] Pair BTC on balance 0.019097104191508816
+[2023-08-18 17:23:56][INFO] Pair USDT on balance 999.6812504925962
+[2023-08-18 17:23:56][INFO] Pair ETH on balance 0.29965240321227377
+[2023-08-18 17:23:56][INFO] Balance on bitstamp
+[2023-08-18 17:23:56][INFO] Pair BTC on balance 0.019110958223445322
+[2023-08-18 17:23:56][INFO] Pair USDT on balance 999.6810209837221
+[2023-08-18 17:23:56][INFO] Pair ETH on balance 0.29986805805445604
+[2023-08-18 17:39:49][INFO] Available exchanges: ['bybit', 'bitstamp']
+[2023-08-18 17:39:52][INFO] Converting balance for pair: BTC/USDT on exchange: bybit
+[2023-08-18 17:39:52][INFO] Converting balance for pair: ETH/USDT on exchange: bybit
+[2023-08-18 17:39:53][INFO] Converting balance for pair: BTC/USDT on exchange: bitstamp
+[2023-08-18 17:39:53][INFO] Converting balance for pair: ETH/USDT on exchange: bitstamp
+[2023-08-18 17:39:53][INFO] Your balance.
+[2023-08-18 17:39:53][INFO] Balance on bybit
+[2023-08-18 17:39:53][INFO] Pair BTC on balance 0.019049810682981432
+[2023-08-18 17:39:53][INFO] Pair USDT on balance 999.6818999728047
+[2023-08-18 17:39:53][INFO] Pair ETH on balance 0.29905021651235675
+[2023-08-18 17:39:53][INFO] Balance on bitstamp
+[2023-08-18 17:39:53][INFO] Pair BTC on balance 0.019062869343093522
+[2023-08-18 17:39:53][INFO] Pair USDT on balance 999.6805285750213
+[2023-08-18 17:39:53][INFO] Pair ETH on balance 0.3004085556356645

@@ -393,15 +393,13 @@ class SimulationTrading:
         self.exchange_api = exchange_api
         self.logger = setup_class_logger(self.__class__.__name__)
         self.arbitrage_analyzer = arbitrage_analyzer
+        self.conversion_prices = {}
         self.exchanges = self.convert_balance(initial_balance)
         self.total_balance = initial_balance * len(self.exchanges)
-    
+
     def convert_balance(self, initial_balance):
         exchange_balances = {}
-        exchange_list = list(self.exchange_api.exchanges.keys())  # Отримуємо список доступних бірж
-
-        # Логування доступних бірж
-        self.logger.info(f"Available exchanges: {exchange_list}")
+        exchange_list = list(self.exchange_api.exchanges.keys())
 
         common_pairs_dict = self.exchange_api.get_common_currency_pairs(exchange_list)
         currency_pairs = []
@@ -411,39 +409,53 @@ class SimulationTrading:
 
         for exchange in exchange_list:
             balances = {}
+            balance = initial_balance  # Початковий баланс для кожної біржі
             portion_balance = initial_balance / len(currency_pairs)
+            
             for pair in currency_pairs:
                 base_currency, quote_currency = pair.split('/')
 
                 # Визначаємо, яка валюта є "основною"
                 if quote_currency in ["USDT", "USD"]:
-                    main_currency = quote_currency
-                    secondary_currency = base_currency
-                else:
                     main_currency = base_currency
-                    secondary_currency = quote_currency
+                elif base_currency in ["USDT", "USD"]:
+                    main_currency = quote_currency
+                else:
+                    main_currency = base_currency  # або quote_currency, залежно від вашої логіки
 
-                # Логування конвертації для кожної валютної пари
-                self.logger.info(f"Converting balance for pair: {pair} on exchange: {exchange}")
+                # Тепер отримуємо ціну для "основної" валюти відносно USD
+                if main_currency != "USDT":
+                    main_price = self.exchange_api.get_price(main_currency + "/USDT", exchange)
+                    # Зберігаємо ціну конвертації для подальшого використання
+                    if exchange not in self.conversion_prices:
+                        self.conversion_prices[exchange] = {}
+                    self.conversion_prices[exchange][main_currency] = main_price
+                    main_amount = portion_balance / main_price
+                    balances[main_currency] = balances.get(main_currency, 0) + main_amount
+                    balance -= portion_balance  # Віднімаємо суму, яку ми конвертували
 
-                # Конвертуємо спочатку другорядну валюту
-                secondary_price = self.exchange_api.get_price(secondary_currency + "/" + main_currency, exchange)
-                secondary_amount = portion_balance / secondary_price
-                balances[secondary_currency] = balances.get(secondary_currency, 0) + secondary_amount
-                balances[main_currency] = balances.get(main_currency, 0) + portion_balance - secondary_amount
-
-                # Тепер конвертуємо основну валюту
-                main_amount = secondary_amount / self.exchange_api.get_price(pair, exchange)
-                balances[base_currency] = balances.get(base_currency, 0) + main_amount
-                balances[secondary_currency] -= main_amount
-
-            exchange_balances[exchange] = balances
-
-        self.logger.info("Your balance.")
-        for exchange, balances in exchange_balances.items():
-            self.logger.info(f'Balance on {exchange}')
-            for currency, balance in balances.items():
-                self.logger.info(f'Pair {currency} on balance {balance}')
-
+                    
+            final_balances = {"balance": balance}
+            final_balances.update(balances)
+            exchange_balances[exchange] = final_balances
 
         return exchange_balances
+
+
+    def revert_to_dollars(self):
+        for exchange, balances in self.exchanges.items():
+            initial_balance = balances["balance"]  # Зберігаємо початковий баланс
+            total_converted = 0  # Сума, яку ми конвертуємо в інші валюти
+
+            for currency, amount in balances.items():
+                if currency != "balance":
+                    conversion_price = self.conversion_prices[exchange].get(currency, 1)  # 1 як default для USDT/USD
+                    total_converted += amount * conversion_price  # Додаємо до загальної суми
+
+            # Відновлюємо баланс
+            balances["balance"] = initial_balance + total_converted
+            for currency in balances:
+                if currency != "balance":
+                    balances[currency] = 0  # Зануляємо баланс валюти після конвертації
+                    
+        return self.exchanges
