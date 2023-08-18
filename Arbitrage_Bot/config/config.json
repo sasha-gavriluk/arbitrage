@@ -1,12 +1,12 @@
 {
     "exchanges": {
         "bybit": {
-            "api_key": "111111111111",
-            "api_secret": "1111111111111111111"
+            "api_key": "MRCvcVgynpuFY3HWvP",
+            "api_secret": "k3WKnSKEQs5a3mceSLOpdhVyLxVMuEodfqF2"
         },
         "bitstamp": {
-            "api_key": "1111111111111111111111",
-            "api_secret": "111111111111111111111"
+            "api_key": "vKOGmuHBD5bT4rFeblW1RZaqhSRluzoZ",
+            "api_secret": "J8mTCaPbcR3UEhutGlqEdPYZq0oZBYV0"
         }
     },
     "risk_management": {
