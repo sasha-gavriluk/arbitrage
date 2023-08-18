@@ -1,20 +1,12 @@
 {
     "exchanges": {
         "bybit": {
-            "api_key": "111111111111111",
-<<<<<<< HEAD
-            "api_secret": "111111111111"
+            "api_key": "111111111111",
+            "api_secret": "1111111111111111111"
         },
         "bitstamp": {
-            "api_key": "11111111111111111",
-            "api_secret": "11111111111111111"
-=======
-            "api_secret": "111111111111"
-        },
-        "bitstamp": {
-            "api_key": "11111111111111111",
-            "api_secret": "1111111111111111"
->>>>>>> 30c06d16099aa9fbb5f2cec4a2d8cc2b28a33c98
+            "api_key": "1111111111111111111111",
+            "api_secret": "111111111111111111111"
         }
     },
     "risk_management": {
@@ -42,6 +34,6 @@
     },
     "currency_pairs": {
         "top_n": 10,
-        "selected_assets": ["BTC/USDT"]
+        "selected_assets": ["BTC/USDT", "ETH/USDT"]
     }
 }
