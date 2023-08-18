@@ -1,12 +1,12 @@
 {
     "exchanges": {
         "bybit": {
-            "api_key": "MRCvcVgynpuFY3HWvP",
-            "api_secret": "k3WKnSKEQs5a3mceSLOpdhVyLxVMuEodfqF2"
+            "api_key": "111111111111111",
+            "api_secret": "1111111111111111111111"
         },
         "bitstamp": {
-            "api_key": "vKOGmuHBD5bT4rFeblW1RZaqhSRluzoZ",
-            "api_secret": "J8mTCaPbcR3UEhutGlqEdPYZq0oZBYV0"
+            "api_key": "11111111111111111111111",
+            "api_secret": "11111111111111111111111111"
         }
     },
     "risk_management": {
@@ -33,6 +33,7 @@
         "phone_number": "+1234567890"
     },
     "currency_pairs": {
-        "top_n": 10
+        "top_n": 10,
+        "selected_assets": ["BTC/USDT"]
     }
 }

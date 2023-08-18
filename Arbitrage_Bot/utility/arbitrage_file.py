@@ -120,21 +120,34 @@ class ExchangeAPI:
         prices = self.get_all_prices(coin)
         return max(prices, key=prices.get)
     
-    def get_common_currency_pairs(self, exchange_list, top_n=10):
+    def get_common_currency_pairs(self, exchange_list):
+        # 1. Отримання параметрів з config
+        selected_assets = self.config_manager.get('currency_pairs', {}).get('selected_assets', [])
+        top_n = self.config_manager.get('currency_pairs', {}).get('top_n', 10)
+
         common_pairs = {}
-        for i in range(len(exchange_list)):
-            for j in range(i+1, len(exchange_list)):
-                exchange_1 = self.exchanges.get(exchange_list[i])
-                exchange_2 = self.exchanges.get(exchange_list[j])
-                if not exchange_1 or not exchange_2:
-                    continue
-                pairs_1 = set(exchange_1.load_markets().keys())
-                pairs_2 = set(exchange_2.load_markets().keys())
-                common = list(pairs_1.intersection(pairs_2))
-                if len(common) > top_n:
-                    common = common[:top_n]
-                pair_name = f'{exchange_list[i]}_{exchange_list[j]}'
-                common_pairs[pair_name] = common
+        
+        # 2. Провірка на список
+        if selected_assets:
+            # Якщо список не пустий, повертаємо його
+            for i in range(len(exchange_list)):
+                for j in range(i+1, len(exchange_list)):
+                    pair_name = f'{exchange_list[i]}_{exchange_list[j]}'
+                    common_pairs[pair_name] = [pair for pair in selected_assets if pair in self.exchanges.get(exchange_list[i]).load_markets().keys() and pair in self.exchanges.get(exchange_list[j]).load_markets().keys()]
+        else:
+            # Якщо список пустий, заповнюємо його автоматично
+            for i in range(len(exchange_list)):
+                for j in range(i+1, len(exchange_list)):
+                    exchange_1 = self.exchanges.get(exchange_list[i])
+                    exchange_2 = self.exchanges.get(exchange_list[j])
+                    if not exchange_1 or not exchange_2:
+                        continue
+                    pairs_1 = set(exchange_1.load_markets().keys())
+                    pairs_2 = set(exchange_2.load_markets().keys())
+                    common = list(pairs_1.intersection(pairs_2))[:top_n]
+                    pair_name = f'{exchange_list[i]}_{exchange_list[j]}'
+                    common_pairs[pair_name] = common
+
         return common_pairs
     
     def close_logger(self):
@@ -378,23 +391,30 @@ class ConfigManager:
 class SimulationTrading:
     def __init__(self, exchange_api, arbitrage_analyzer, initial_balance):
         self.exchange_api = exchange_api
+        self.logger = setup_class_logger(self.__class__.__name__)
         self.arbitrage_analyzer = arbitrage_analyzer
         self.exchanges = self.convert_balance(initial_balance)
         self.total_balance = initial_balance * len(self.exchanges)
-        self.logger = setup_class_logger(self.__class__.__name__)
     
     def convert_balance(self, initial_balance):
         exchange_balances = {}
         exchange_list = list(self.exchange_api.exchanges.keys())  # Отримуємо список доступних бірж
+
+        # Логування доступних бірж
+        self.logger.info(f"Available exchanges: {exchange_list}")
+
         common_pairs_dict = self.exchange_api.get_common_currency_pairs(exchange_list)
         currency_pairs = []
+
+        for pairs in common_pairs_dict.values():
+            currency_pairs.extend(pairs)
 
         for exchange in exchange_list:
             balances = {}
             portion_balance = initial_balance / len(currency_pairs)
-            for pairs in common_pairs_dict.values():
-                currency_pairs.extend(pairs)
-                
+            for pair in currency_pairs:
+                base_currency, quote_currency = pair.split('/')
+
                 # Визначаємо, яка валюта є "основною"
                 if quote_currency in ["USDT", "USD"]:
                     main_currency = quote_currency
@@ -402,6 +422,9 @@ class SimulationTrading:
                 else:
                     main_currency = base_currency
                     secondary_currency = quote_currency
+
+                # Логування конвертації для кожної валютної пари
+                self.logger.info(f"Converting balance for pair: {pair} on exchange: {exchange}")
 
                 # Конвертуємо спочатку другорядну валюту
                 secondary_price = self.exchange_api.get_price(secondary_currency + "/" + main_currency, exchange)
@@ -415,5 +438,12 @@ class SimulationTrading:
                 balances[secondary_currency] -= main_amount
 
             exchange_balances[exchange] = balances
+
+        self.logger.info("Your balance.")
+        for exchange, balances in exchange_balances.items():
+            self.logger.info(f'Balance on {exchange}')
+            for currency, balance in balances.items():
+                self.logger.info(f'Pair {currency} on balance {balance}')
+
 
         return exchange_balances
