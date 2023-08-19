@@ -1,4 +1,5 @@
 import os
+import time
 
 # Ваші класи
 from utility.arbitrage_file import ExchangeAPI, ArbitrageAnalyzer, ConfigManager, TransactionManager, NotificationManager, SimulationTrading
@@ -10,11 +11,15 @@ config = ConfigManager(path_congfig)
 exchange_api = ExchangeAPI(config)
 arbitrage_analyzer = ArbitrageAnalyzer(exchange_api, config)
 
+opportunities = arbitrage_analyzer.find_opportunities(['bybit', 'bitstamp'])
+
 # 2. Створення екземпляра SimulationTrading
 initial_balance = 1000  # Початковий баланс для імітаційної торгівлі
 simulation_trading = SimulationTrading(exchange_api, arbitrage_analyzer, initial_balance)
 
-simulation_trading.run_simulation(['bybit', 'bitstamp'])
+for a in range(0, 5):
+    time.sleep(60)
+    simulation_trading.run_simulation(['bybit', 'bitstamp'])
 
 
 

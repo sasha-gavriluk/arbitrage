@@ -23,7 +23,7 @@
         "log_format": "[%(asctime)s][%(levelname)s] %(message)s"
     },
     "transaction": {
-        "fee": 0.001
+        "fee": 0.01
     },
     "arbitrage": {
         "min_price_difference": 0.01

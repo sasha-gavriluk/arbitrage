@@ -2,13 +2,9 @@ import json
 import random
 import shutil
 import os
-import datetime
 import logging
 import time
 import ccxt
-
-from collections import defaultdict
-
 
 def setup_class_logger(class_name):
     path_py_file = os.path.abspath(os.path.dirname(os.path.dirname(__name__)))
@@ -209,6 +205,20 @@ class ArbitrageAnalyzer:
         sell_price = opportunity['sell_price']
         return sell_price - buy_price
     
+    def calculate_trade_amount(self, opportunity, capital):
+        risk_management = self.config_manager.get_risk_management()
+        max_position = risk_management.get('max_position_size')
+        max_loss = risk_management.get('max_loss')
+
+        # Розрахунок максимальної можливої втрати в доларах
+        max_dollar_loss = capital * max_loss
+
+        price_difference = self.calculate_profit(opportunity)
+        # Розрахунок об'єму угоди на основі різниці в цінах та максимальної втрати
+        amount = min(max_dollar_loss / price_difference, max_position)
+
+        return amount
+    
     def close_logger(self):
         for handler in self.logger.handlers:
             handler.close()
@@ -384,6 +394,9 @@ class ConfigManager:
 
     def get_currency_pairs_config(self):
         return self.get("currency_pairs", {})
+    
+    def get_risk_management(self):
+        return self.get("risk_management", {})
 
     def close_logger(self):
         for handler in self.logger.handlers:
@@ -397,12 +410,12 @@ class SimulationTrading:
         self.logger = setup_class_logger(self.__class__.__name__)
         self.arbitrage_analyzer = arbitrage_analyzer
         self.conversion_prices = {}
-        self.exchanges = self.convert_balance(initial_balance)
-        self.total_balance = initial_balance * len(self.exchanges)
+        self.initial_balance = initial_balance
+        self.exchanges = None
         self.logger.info("SimulationTrading initiated with an honorable balance: %s", initial_balance)
 
     def convert_balance(self, initial_balance):
-        self.logger.info("Cob balance conversion: %s", initial_balance)
+        self.logger.info("Конвертація початкового балансу: %s", initial_balance)
         exchange_balances = {}
         exchange_list = list(self.exchange_api.exchanges.keys())
 
@@ -412,10 +425,12 @@ class SimulationTrading:
         for pairs in common_pairs_dict.values():
             currency_pairs.extend(pairs)
 
+        balance_for_conversion = (2/3) * initial_balance  # 2/3 від початкового балансу для конвертації
+        balance_remaining = (1/3) * initial_balance  # 1/3 від початкового балансу залишається
+        portion_balance = balance_for_conversion / len(currency_pairs)
+
         for exchange in exchange_list:
             balances = {}
-            balance = initial_balance  # Початковий баланс для кожної біржі
-            portion_balance = initial_balance / len(currency_pairs)
             
             for pair in currency_pairs:
                 base_currency, quote_currency = pair.split('/')
@@ -426,21 +441,19 @@ class SimulationTrading:
                 elif base_currency in ["USDT", "USD"]:
                     main_currency = quote_currency
                 else:
-                    main_currency = base_currency  # або quote_currency, залежно від вашої логіки
+                    main_currency = base_currency
 
                 # Тепер отримуємо ціну для "основної" валюти відносно USD
                 if main_currency != "USDT":
                     main_price = self.exchange_api.get_price(main_currency + "/USDT", exchange)
-                    # Зберігаємо ціну конвертації для подальшого використання
                     if exchange not in self.conversion_prices:
                         self.conversion_prices[exchange] = {}
                     self.conversion_prices[exchange][main_currency] = main_price
                     main_amount = portion_balance / main_price
                     balances[main_currency] = balances.get(main_currency, 0) + main_amount
-                    balance -= portion_balance  # Віднімаємо суму, яку ми конвертували
 
-                    
-            final_balances = {"balance": balance}
+
+            final_balances = {"balance": balance_remaining}
             final_balances.update(balances)
             exchange_balances[exchange] = final_balances
 
@@ -455,7 +468,8 @@ class SimulationTrading:
 
             for currency, amount in balances.items():
                 if currency != "balance":
-                    conversion_price = self.conversion_prices[exchange].get(currency, 1)  # 1 як default для USDT/USD
+                    # Отримуємо актуальну ціну для конвертації
+                    conversion_price = self.exchange_api.get_price(currency + "/USDT", exchange)
                     total_converted += amount * conversion_price  # Додаємо до загальної суми
 
             # Відновлюємо баланс
@@ -465,53 +479,90 @@ class SimulationTrading:
                     balances[currency] = 0  # Зануляємо баланс валюти після конвертації
                     
         return self.exchanges
+
     
     def run_simulation(self, list_name_exchenges):
-        logging.info("Starting the simulation...")
+        self.logger.info("Starting the simulation...")
+        # Крок 0: Свторення депозиту
+        self.exchanges = self.convert_balance(self.initial_balance)
 
         # Крок 1: Виконання торгових операцій
-        logging.info("Step 1: Executing trading operations...")
+        self.logger.info("Step 1: Executing trading operations...")
         opportunities = self.arbitrage_analyzer.find_opportunities(list_name_exchenges)
+
+
         if not opportunities:
-            logging.warning("No arbitrage opportunities found.")
-        for op in opportunities:
-            # Симулюємо покупку
-            logging.info(f"Simulating buying {op['buy_amount']} {op['buy_currency']} on {op['buy_exchange']} at price {op['buy_price']} USDT.")
-            self.simulate_buy(op['buy_currency'], op['buy_amount'], opportunities)
-            
-            # Симулюємо продаж
-            logging.info(f"Simulating selling {op['sell_amount']} {op['sell_currency']} on {op['sell_exchange']} at price {op['sell_price']} USDT.")
-            self.simulate_sell(op['sell_currency'], op['sell_amount'], opportunities)
+            self.logger.warning("No arbitrage opportunities found.")
+
+
+        op = opportunities[0]
+        # Симулюємо покупку
+
+        balance_exchenges = self.get_exchange_balance(op["buy_exchange"])
+        buy_amount = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges)
+        self.logger.info(f"Simulating buying {buy_amount} {op['currency']} on {op['buy_exchange']} at price {op['buy_price']} USDT.")
+        self.simulate_buy(op['currency'], buy_amount, op)
+        
+        # Симулюємо продаж
+
+        balance_exchenges_sell = self.get_exchange_balance(op["sell_exchange"])
+        sell_amount= self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges_sell)
+        self.logger.info(f"Simulating selling {sell_amount} {op['currency']} on {op['sell_exchange']} at price {op['sell_price']} USDT.")
+        self.simulate_sell(op['currency'], sell_amount, op)
 
         # Крок 2: Відновлення балансу до доларів
-        logging.info("Step 2: Reverting all currencies back to USDT...")
-        for exchange in self.exchanges:
-            for currency, amount in self.exchanges[exchange].items():
-                if currency != "balance" and amount > 0:
-                    logging.info(f"Converting {amount} {currency} back to USDT on {exchange}.")
-                    self.simulate_sell(currency, amount, opportunities)
+        self.logger.info("Step 2: Reverting all currencies back to USDT...")
+        self.revert_to_dollars()  # Викликаємо метод для конвертації валют назад до USDT
+        # Оскільки метод revert_to_dollars вже виконує всю необхідну логіку конвертації, 
+        # нам не потрібно додатково проходитися по всіх біржах і валютах в цьому фрагменті коду.
 
         # Крок 3: Виведення результатів симуляції
         total_balance = sum([self.exchanges[exchange]["balance"] for exchange in self.exchanges])
-        logging.info(f"Step 3: Simulation completed. Total balance after simulation: {total_balance} USDT.")
+        self.logger.info(f"Step 3: Simulation completed. Total balance after simulation: {total_balance} USDT.")
 
-    def simulate_buy(self, currency, amount, opportunities):
+    def simulate_buy(self, currency_pair, amount, opportunities):
+        base_currency, quote_currency = currency_pair.split('/')
+        exchange = opportunities['buy_exchange']
+        
+        # Визначаємо, яка валюта є "основною"
+        if quote_currency in ["USDT", "USD"]:
+            main_currency = base_currency
+        else:
+            main_currency = quote_currency
+
         time.sleep(random.uniform(0.05, 0.5))
         price_variation = random.uniform(-0.005, 0.005)
         buy_price = opportunities['buy_price'] * (1 + price_variation)
         commission = 0.0025
         amount_after_commission = amount * (1 - commission)
         bought_currency_amount = amount_after_commission / buy_price
-        self.exchanges[currency] += bought_currency_amount
-        self.exchanges['USDT'] -= amount
-        self.logger.info(f"Buy {bought_currency_amount} {currency} by {amount_after_commission} USDT.")
 
-    def simulate_sell(self, currency, amount, opportunities):
+        self.exchanges[exchange][main_currency] += bought_currency_amount
+        self.exchanges[exchange]['balance'] -= amount
+        self.logger.info(f"Buy {bought_currency_amount} {main_currency} by {amount_after_commission} USDT on {exchange}.")
+
+    def simulate_sell(self, currency_pair, amount, opportunities):
+        base_currency, quote_currency = currency_pair.split('/')
+        exchange = opportunities['sell_exchange']
+        
+        # Визначаємо, яка валюта є "основною"
+        if quote_currency in ["USDT", "USD"]:
+            main_currency = base_currency
+        else:
+            main_currency = quote_currency
+
         time.sleep(random.uniform(0.05, 0.5))
         price_variation = random.uniform(-0.005, 0.005)
         sell_price = opportunities['sell_price'] * (1 + price_variation)
         commission = 0.0025
         sold_usdt_amount = amount * sell_price * (1 - commission)
-        self.exchanges[currency] -= amount
-        self.exchanges['USDT'] += sold_usdt_amount
-        self.logger.info(f"Sell {amount} {currency} by {sold_usdt_amount} USDT.")
+
+        self.exchanges[exchange][main_currency] -= amount
+        self.exchanges[exchange]['balance'] += sold_usdt_amount
+        self.logger.info(f"Sell {amount} {main_currency} by {sold_usdt_amount} USDT on {exchange}.")
+
+    def get_currency_balance(self, exchange_name, currency):
+        return self.exchanges.get(exchange_name, {}).get(currency, 0)
+
+    def get_exchange_balance(self, exchange_name):
+        return self.exchanges.get(exchange_name, {}).get("balance", 0)

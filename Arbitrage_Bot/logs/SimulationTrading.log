@@ -69,3 +69,259 @@
 [2023-08-19 15:25:52][INFO] SimulationTrading initiated with an honorable balance: 1000
 [2023-08-19 15:34:44][INFO] Cob balance conversion: 1000
 [2023-08-19 15:34:51][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 16:33:37][INFO] Cob balance conversion: 1000
+[2023-08-19 16:33:43][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 16:34:15][INFO] Cob balance conversion: 1000
+[2023-08-19 16:34:20][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 16:37:40][INFO] Cob balance conversion: 1000
+[2023-08-19 16:37:46][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 16:38:59][INFO] Cob balance conversion: 1000
+[2023-08-19 16:38:59][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 16:44:38][INFO] Cob balance conversion: 1000
+[2023-08-19 16:44:38][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 16:46:18][INFO] Cob balance conversion: 1000
+[2023-08-19 16:46:18][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:00:42][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:00:42][INFO] Cob balance conversion: 1000
+[2023-08-19 17:02:50][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:02:50][INFO] Cob balance conversion: 1000
+[2023-08-19 17:03:45][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:03:45][INFO] Cob balance conversion: 1000
+[2023-08-19 17:05:56][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:08:25][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:08:25][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:10:51][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:10:51][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:14:59][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:14:59][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:17:05][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:17:05][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:20:17][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:20:17][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:28:51][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:28:51][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:33:00][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:33:00][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:33:39][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:33:39][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:33:39][INFO] Buy 4.569239082291488e-06 BTC by 0.11875 USDT on bitstamp.
+[2023-08-19 17:33:39][INFO] Sell 0.11904761904761904 BTC by 3083.0446124507675 USDT on bybit.
+[2023-08-19 17:33:39][INFO] Convert to dollars
+[2023-08-19 17:36:10][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:36:10][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:36:10][INFO] Buy 2.5094209030269043e-05 BTC by 0.6532416502946768 USDT on bybit.
+[2023-08-19 17:36:10][INFO] Sell 0.6548788474132098 BTC by 17063.757989921774 USDT on bitstamp.
+[2023-08-19 17:36:10][INFO] Convert to dollars
+[2023-08-19 17:36:47][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:36:47][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:36:47][INFO] Buy 1.3624858950547276e-05 BTC by 0.3529723991508085 USDT on bybit.
+[2023-08-19 17:36:47][INFO] Sell 0.3538570417551965 BTC by 9199.993039657047 USDT on bitstamp.
+[2023-08-19 17:36:47][INFO] Convert to dollars
+[2023-08-19 17:37:47][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:37:47][INFO] Starting the simulation...
+[2023-08-19 17:37:47][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:37:47][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:37:47][INFO] Simulating buying 0.34977264777898637 BTC/USDT on bybit at price 25995.47 USDT.
+[2023-08-19 17:37:48][INFO] Buy 1.3409890601013159e-05 BTC by 0.3488982161595389 USDT on bybit.
+[2023-08-19 17:37:48][INFO] Simulating selling 0.34977264777898637 BTC/USDT on bitstamp at price 26005.0 USDT.
+[2023-08-19 17:37:48][INFO] Sell 0.34977264777898637 BTC by 9083.34615705256 USDT on bitstamp.
+[2023-08-19 17:37:48][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:37:48][INFO] Convert to dollars
+[2023-08-19 17:37:48][INFO] Step 3: Simulation completed. Total balance after simulation: 1987.5072753210638 USDT.
+[2023-08-19 17:38:12][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:38:12][INFO] Starting the simulation...
+[2023-08-19 17:38:12][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:38:12][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:38:12][INFO] Simulating buying 0.3501400560223929 BTC/USDT on bybit at price 25995.48 USDT.
+[2023-08-19 17:38:12][INFO] Buy 1.341000041206297e-05 BTC by 0.34926470588233693 USDT on bybit.
+[2023-08-19 17:38:12][INFO] Simulating selling 0.3501400560223929 BTC/USDT on bitstamp at price 26005.0 USDT.
+[2023-08-19 17:38:12][INFO] Sell 0.3501400560223929 BTC by 9065.040605042683 USDT on bitstamp.
+[2023-08-19 17:38:12][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:38:12][INFO] Convert to dollars
+[2023-08-19 17:38:12][INFO] Step 3: Simulation completed. Total balance after simulation: 1959.6469075218456 USDT.
+[2023-08-19 17:38:27][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:38:27][INFO] Starting the simulation...
+[2023-08-19 17:38:27][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:38:27][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:38:27][INFO] Simulating buying 0.34977264777898637 BTC/USDT on bybit at price 25995.47 USDT.
+[2023-08-19 17:38:27][INFO] Buy 1.3365285091686239e-05 BTC by 0.3488982161595389 USDT on bybit.
+[2023-08-19 17:38:27][INFO] Simulating selling 0.34977264777898637 BTC/USDT on bitstamp at price 26005.0 USDT.
+[2023-08-19 17:38:27][INFO] Sell 0.34977264777898637 BTC by 9055.311597378077 USDT on bitstamp.
+[2023-08-19 17:38:27][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:38:27][INFO] Convert to dollars
+[2023-08-19 17:38:27][INFO] Step 3: Simulation completed. Total balance after simulation: 1959.4715561054015 USDT.
+[2023-08-19 17:38:47][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:38:47][INFO] Starting the simulation...
+[2023-08-19 17:38:47][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:38:47][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:38:47][INFO] Simulating buying 0.6720430107528064 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:38:47][INFO] Buy 2.5823360521029283e-05 BTC by 0.6703629032259244 USDT on bitstamp.
+[2023-08-19 17:38:47][INFO] Simulating selling 0.6720430107528064 BTC/USDT on bybit at price 26003.96 USDT.
+[2023-08-19 17:38:47][INFO] Sell 0.6720430107528064 BTC by 17375.83271248397 USDT on bybit.
+[2023-08-19 17:38:47][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:38:47][INFO] Convert to dollars
+[2023-08-19 17:38:47][INFO] Step 3: Simulation completed. Total balance after simulation: 1900.0524811278553 USDT.
+[2023-08-19 17:42:33][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:42:33][INFO] Starting the simulation...
+[2023-08-19 17:42:33][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:42:33][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:42:33][INFO] Simulating buying 0.6680026720104737 BTC/USDT on bybit at price 25994.01 USDT.
+[2023-08-19 17:42:33][INFO] Buy 2.559145438124073e-05 BTC by 0.6663326653304475 USDT on bybit.
+[2023-08-19 17:42:33][INFO] Simulating selling 0.6680026720104737 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:42:33][INFO] Sell 0.6680026720104737 BTC by 17381.554259456414 USDT on bitstamp.
+[2023-08-19 17:42:33][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:42:33][INFO] Convert to dollars
+[2023-08-19 17:42:33][INFO] Step 3: Simulation completed. Total balance after simulation: 2014.1500117051971 USDT.
+[2023-08-19 17:45:00][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:45:00][INFO] Starting the simulation...
+[2023-08-19 17:45:00][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:00][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:00][INFO] Simulating buying 0.6626905235256669 BTC/USDT on bybit at price 25993.97 USDT.
+[2023-08-19 17:45:01][INFO] Buy 2.5367940973370115e-05 BTC by 0.6610337972168528 USDT on bybit.
+[2023-08-19 17:45:01][INFO] Simulating selling 0.6626905235256669 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:01][INFO] Sell 0.6626905235256669 BTC by 17109.335202343827 USDT on bitstamp.
+[2023-08-19 17:45:01][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:01][INFO] Convert to dollars
+[2023-08-19 17:45:01][INFO] Step 3: Simulation completed. Total balance after simulation: 1880.0410041731088 USDT.
+[2023-08-19 17:45:01][INFO] Starting the simulation...
+[2023-08-19 17:45:01][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:01][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:01][INFO] Simulating buying 0.6626905235256669 BTC/USDT on bybit at price 25993.97 USDT.
+[2023-08-19 17:45:01][INFO] Buy 2.5517859238196974e-05 BTC by 0.6610337972168528 USDT on bybit.
+[2023-08-19 17:45:01][INFO] Simulating selling 0.6626905235256669 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:02][INFO] Sell 0.6626905235256669 BTC by 17233.209146894857 USDT on bitstamp.
+[2023-08-19 17:45:02][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:02][INFO] Convert to dollars
+[2023-08-19 17:45:02][INFO] Step 3: Simulation completed. Total balance after simulation: 2003.9188456950164 USDT.
+[2023-08-19 17:45:02][INFO] Starting the simulation...
+[2023-08-19 17:45:02][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:02][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:02][INFO] Simulating buying 0.6626905235256669 BTC/USDT on bybit at price 25993.97 USDT.
+[2023-08-19 17:45:02][INFO] Buy 2.5310189610025533e-05 BTC by 0.6610337972168528 USDT on bybit.
+[2023-08-19 17:45:02][INFO] Simulating selling 0.6626905235256669 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:02][INFO] Sell 0.6626905235256669 BTC by 17271.851549192117 USDT on bitstamp.
+[2023-08-19 17:45:02][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:02][INFO] Convert to dollars
+[2023-08-19 17:45:02][INFO] Step 3: Simulation completed. Total balance after simulation: 2042.5558498341925 USDT.
+[2023-08-19 17:45:02][INFO] Starting the simulation...
+[2023-08-19 17:45:02][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:02][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:02][INFO] Simulating buying 0.6626905235256669 BTC/USDT on bybit at price 25993.97 USDT.
+[2023-08-19 17:45:02][INFO] Buy 2.551180153999968e-05 BTC by 0.6610337972168528 USDT on bybit.
+[2023-08-19 17:45:02][INFO] Simulating selling 0.6626905235256669 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:03][INFO] Sell 0.6626905235256669 BTC by 17193.823114676463 USDT on bitstamp.
+[2023-08-19 17:45:03][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:03][INFO] Convert to dollars
+[2023-08-19 17:45:03][INFO] Step 3: Simulation completed. Total balance after simulation: 1964.5326560129974 USDT.
+[2023-08-19 17:45:03][INFO] Starting the simulation...
+[2023-08-19 17:45:03][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:03][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:03][INFO] Simulating buying 0.6626905235256669 BTC/USDT on bybit at price 25993.97 USDT.
+[2023-08-19 17:45:03][INFO] Buy 2.554320953230927e-05 BTC by 0.6610337972168528 USDT on bybit.
+[2023-08-19 17:45:03][INFO] Simulating selling 0.6626905235256669 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:04][INFO] Sell 0.6626905235256669 BTC by 17156.148145409938 USDT on bitstamp.
+[2023-08-19 17:45:04][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:04][INFO] Convert to dollars
+[2023-08-19 17:45:04][INFO] Step 3: Simulation completed. Total balance after simulation: 1926.858503164882 USDT.
+[2023-08-19 17:45:51][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:45:51][INFO] Starting the simulation...
+[2023-08-19 17:45:51][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:51][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:51][INFO] Simulating buying 1.0 BTC/USDT on bybit at price 25997.97 USDT.
+[2023-08-19 17:45:52][INFO] Buy 3.83070304413421e-05 BTC by 0.9975 USDT on bybit.
+[2023-08-19 17:45:52][INFO] Simulating selling 1.0 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:52][INFO] Sell 1.0 BTC by 25985.935240771036 USDT on bitstamp.
+[2023-08-19 17:45:52][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:52][INFO] Convert to dollars
+[2023-08-19 17:45:52][INFO] Step 3: Simulation completed. Total balance after simulation: 1986.9311457992387 USDT.
+[2023-08-19 17:45:52][INFO] Starting the simulation...
+[2023-08-19 17:45:52][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:52][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:52][INFO] Simulating buying 1.0 BTC/USDT on bybit at price 25997.97 USDT.
+[2023-08-19 17:45:53][INFO] Buy 3.8197788184730665e-05 BTC by 0.9975 USDT on bybit.
+[2023-08-19 17:45:53][INFO] Simulating selling 1.0 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:53][INFO] Sell 1.0 BTC by 25955.94928340592 USDT on bitstamp.
+[2023-08-19 17:45:53][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:53][INFO] Convert to dollars
+[2023-08-19 17:45:53][INFO] Step 3: Simulation completed. Total balance after simulation: 1956.9423483572132 USDT.
+[2023-08-19 17:45:53][INFO] Starting the simulation...
+[2023-08-19 17:45:53][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:53][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:53][INFO] Simulating buying 1.0 BTC/USDT on bybit at price 25997.97 USDT.
+[2023-08-19 17:45:53][INFO] Buy 3.851593792463572e-05 BTC by 0.9975 USDT on bybit.
+[2023-08-19 17:45:53][INFO] Simulating selling 1.0 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:54][INFO] Sell 1.0 BTC by 25957.559571045735 USDT on bitstamp.
+[2023-08-19 17:45:54][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:54][INFO] Convert to dollars
+[2023-08-19 17:45:54][INFO] Step 3: Simulation completed. Total balance after simulation: 1958.560907244421 USDT.
+[2023-08-19 17:45:54][INFO] Starting the simulation...
+[2023-08-19 17:45:54][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:54][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:54][INFO] Simulating buying 1.0 BTC/USDT on bybit at price 25997.97 USDT.
+[2023-08-19 17:45:54][INFO] Buy 3.82639760413641e-05 BTC by 0.9975 USDT on bybit.
+[2023-08-19 17:45:54][INFO] Simulating selling 1.0 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:54][INFO] Sell 1.0 BTC by 25829.471162710048 USDT on bitstamp.
+[2023-08-19 17:45:54][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:54][INFO] Convert to dollars
+[2023-08-19 17:45:54][INFO] Step 3: Simulation completed. Total balance after simulation: 1830.465948411252 USDT.
+[2023-08-19 17:45:54][INFO] Starting the simulation...
+[2023-08-19 17:45:54][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:45:54][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:45:54][INFO] Simulating buying 1.0 BTC/USDT on bybit at price 25997.97 USDT.
+[2023-08-19 17:45:55][INFO] Buy 3.820105692300746e-05 BTC by 0.9975 USDT on bybit.
+[2023-08-19 17:45:55][INFO] Simulating selling 1.0 BTC/USDT on bitstamp at price 25999.0 USDT.
+[2023-08-19 17:45:55][INFO] Sell 1.0 BTC by 26032.010065525366 USDT on bitstamp.
+[2023-08-19 17:45:55][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:45:55][INFO] Convert to dollars
+[2023-08-19 17:45:55][INFO] Step 3: Simulation completed. Total balance after simulation: 2033.0032154572189 USDT.
+[2023-08-19 17:47:09][INFO] SimulationTrading initiated with an honorable balance: 1000
+[2023-08-19 17:48:09][INFO] Starting the simulation...
+[2023-08-19 17:48:09][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:48:09][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:48:09][INFO] Simulating buying 0.3333333333333333 BTC/USDT on bybit at price 25982.0 USDT.
+[2023-08-19 17:48:09][INFO] Buy 1.2744341418917635e-05 BTC by 0.3325 USDT on bybit.
+[2023-08-19 17:48:09][INFO] Simulating selling 0.3333333333333333 BTC/USDT on bitstamp at price 25992.0 USDT.
+[2023-08-19 17:48:09][INFO] Sell 0.3333333333333333 BTC by 8647.139795966337 USDT on bitstamp.
+[2023-08-19 17:48:09][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:48:09][INFO] Convert to dollars
+[2023-08-19 17:48:09][INFO] Step 3: Simulation completed. Total balance after simulation: 1983.137586111751 USDT.
+[2023-08-19 17:49:09][INFO] Starting the simulation...
+[2023-08-19 17:49:09][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:49:09][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:49:09][INFO] Simulating buying 0.3333333333333333 BTC/USDT on bybit at price 25982.0 USDT.
+[2023-08-19 17:49:09][INFO] Buy 1.2833075535886667e-05 BTC by 0.3325 USDT on bybit.
+[2023-08-19 17:49:09][INFO] Simulating selling 0.3333333333333333 BTC/USDT on bitstamp at price 25992.0 USDT.
+[2023-08-19 17:49:10][INFO] Sell 0.3333333333333333 BTC by 8612.951590053091 USDT on bitstamp.
+[2023-08-19 17:49:10][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:49:10][INFO] Convert to dollars
+[2023-08-19 17:49:10][INFO] Step 3: Simulation completed. Total balance after simulation: 1948.9516856883324 USDT.
+[2023-08-19 17:50:10][INFO] Starting the simulation...
+[2023-08-19 17:50:10][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:50:10][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:50:10][INFO] Simulating buying 0.3333333333333333 BTC/USDT on bybit at price 25982.0 USDT.
+[2023-08-19 17:50:10][INFO] Buy 1.2768022345357236e-05 BTC by 0.3325 USDT on bybit.
+[2023-08-19 17:50:10][INFO] Simulating selling 0.3333333333333333 BTC/USDT on bitstamp at price 25992.0 USDT.
+[2023-08-19 17:50:10][INFO] Sell 0.3333333333333333 BTC by 8683.998988249468 USDT on bitstamp.
+[2023-08-19 17:50:10][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:50:10][INFO] Convert to dollars
+[2023-08-19 17:50:10][INFO] Step 3: Simulation completed. Total balance after simulation: 2019.9973936727129 USDT.
+[2023-08-19 17:51:10][INFO] Starting the simulation...
+[2023-08-19 17:51:10][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:51:10][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:51:10][INFO] Simulating buying 0.3333333333333333 BTC/USDT on bybit at price 25982.0 USDT.
+[2023-08-19 17:51:11][INFO] Buy 1.2769389847092992e-05 BTC by 0.3325 USDT on bybit.
+[2023-08-19 17:51:11][INFO] Simulating selling 0.3333333333333333 BTC/USDT on bitstamp at price 25992.0 USDT.
+[2023-08-19 17:51:11][INFO] Sell 0.3333333333333333 BTC by 8640.483553159724 USDT on bitstamp.
+[2023-08-19 17:51:11][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:51:11][INFO] Convert to dollars
+[2023-08-19 17:51:11][INFO] Step 3: Simulation completed. Total balance after simulation: 1976.4819941133983 USDT.
+[2023-08-19 17:52:11][INFO] Starting the simulation...
+[2023-08-19 17:52:11][INFO] Конвертація початкового балансу: 1000
+[2023-08-19 17:52:11][INFO] Step 1: Executing trading operations...
+[2023-08-19 17:52:11][INFO] Simulating buying 0.3333333333333333 BTC/USDT on bybit at price 25982.0 USDT.
+[2023-08-19 17:52:12][INFO] Buy 1.2848451606386601e-05 BTC by 0.3325 USDT on bybit.
+[2023-08-19 17:52:12][INFO] Simulating selling 0.3333333333333333 BTC/USDT on bitstamp at price 25992.0 USDT.
+[2023-08-19 17:52:12][INFO] Sell 0.3333333333333333 BTC by 8662.042186021694 USDT on bitstamp.
+[2023-08-19 17:52:12][INFO] Step 2: Reverting all currencies back to USDT...
+[2023-08-19 17:52:12][INFO] Convert to dollars
+[2023-08-19 17:52:12][INFO] Step 3: Simulation completed. Total balance after simulation: 1998.0426811579985 USDT.
