@@ -14,10 +14,20 @@ arbitrage_analyzer = ArbitrageAnalyzer(exchange_api, config)
 initial_balance = 1000  # Початковий баланс для імітаційної торгівлі
 simulation_trading = SimulationTrading(exchange_api, arbitrage_analyzer, initial_balance)
 
-print(simulation_trading.exchanges)
-print(simulation_trading.revert_to_dollars())
+simulation_trading.run_simulation(['bybit', 'bitstamp'])
 
-"""""
+
+
+"""
+
+# Пошук можливостей для арбітражу між біржами 'binance' та 'coinbase'
+opportunities = arbitrage_analyzer.find_opportunities(['bybit', 'bitstamp'])
+#transaction.execute_best_trade(opportunities)
+
+filtered_opportunities = arbitrage_analyzer.filter_liquid_markets(opportunities)
+print(filtered_opportunities)
+
+print('\n')
 
 
 send_message = NotificationManager()
@@ -25,13 +35,6 @@ send_message = NotificationManager()
 # Ініціалізація ArbitrageAnalyzer
 
 transaction = TransactionManager(exchange_api)
-
-# Пошук можливостей для арбітражу між біржами 'binance' та 'coinbase'
-opportunities = analyzer.find_opportunities(['bybit', 'bitstamp'])
-#transaction.execute_best_trade(opportunities)
-
-print(opportunities)
-print('\n')
 
 # Фільтрація можливостей на основі ліквідності (зараз просто повертає всі можливості)
 filtered_opportunities = analyzer.filter_liquid_markets(opportunities)

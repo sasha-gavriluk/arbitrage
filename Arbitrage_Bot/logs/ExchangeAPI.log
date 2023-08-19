@@ -299,3 +299,47 @@
 [2023-08-18 20:47:06][INFO] Fetched price for ETH/USDT from bybit: 1664.77
 [2023-08-18 20:47:06][INFO] Fetched price for BTC/USDT from bitstamp: 26061.0
 [2023-08-18 20:47:06][INFO] Fetched price for ETH/USDT from bitstamp: 1661.3
+[2023-08-19 15:20:48][INFO] Initialized bybit successfully.
+[2023-08-19 15:20:48][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:20:54][INFO] Fetched price for BTC/USDT from bybit: 25891.98
+[2023-08-19 15:20:54][INFO] Fetched price for ETH/USDT from bybit: 1659.04
+[2023-08-19 15:20:54][INFO] Fetched price for BTC/USDT from bitstamp: 25896.0
+[2023-08-19 15:20:54][INFO] Fetched price for ETH/USDT from bitstamp: 1659.4
+[2023-08-19 15:24:54][INFO] Initialized bybit successfully.
+[2023-08-19 15:24:54][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:25:01][INFO] Fetched price for BTC/USDT from bybit: 25878.77
+[2023-08-19 15:25:01][INFO] Fetched price for ETH/USDT from bybit: 1658.59
+[2023-08-19 15:25:02][INFO] Fetched price for BTC/USDT from bitstamp: 25896.0
+[2023-08-19 15:25:02][INFO] Fetched price for ETH/USDT from bitstamp: 1658.8
+[2023-08-19 15:25:46][INFO] Initialized bybit successfully.
+[2023-08-19 15:25:46][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:25:52][INFO] Fetched price for BTC/USDT from bybit: 25893.97
+[2023-08-19 15:25:52][INFO] Fetched price for ETH/USDT from bybit: 1659.3
+[2023-08-19 15:25:52][INFO] Fetched price for BTC/USDT from bitstamp: 25896.0
+[2023-08-19 15:25:52][INFO] Fetched price for ETH/USDT from bitstamp: 1658.8
+[2023-08-19 15:29:26][INFO] Initialized bybit successfully.
+[2023-08-19 15:29:26][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:29:56][INFO] Initialized bybit successfully.
+[2023-08-19 15:29:56][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:30:00][INFO] Fetched price for BTC/USDT from bybit: 25879.37
+[2023-08-19 15:30:00][INFO] Fetched price for BTC/USDT from bitstamp: 25896.0
+[2023-08-19 15:30:01][INFO] Fetched price for ETH/USDT from bybit: 1658.63
+[2023-08-19 15:30:01][INFO] Fetched price for ETH/USDT from bitstamp: 1658.8
+[2023-08-19 15:31:46][INFO] Initialized bybit successfully.
+[2023-08-19 15:31:46][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:31:51][INFO] Fetched price for BTC/USDT from bybit: 25879.37
+[2023-08-19 15:31:51][INFO] Fetched price for BTC/USDT from bitstamp: 25896.0
+[2023-08-19 15:31:52][INFO] Fetched price for ETH/USDT from bybit: 1658.63
+[2023-08-19 15:31:52][INFO] Fetched price for ETH/USDT from bitstamp: 1658.8
+[2023-08-19 15:34:15][INFO] Initialized bybit successfully.
+[2023-08-19 15:34:15][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:34:20][INFO] Fetched price for BTC/USDT from bybit: 25900.09
+[2023-08-19 15:34:21][INFO] Fetched price for BTC/USDT from bitstamp: 25896.0
+[2023-08-19 15:34:21][INFO] Fetched price for ETH/USDT from bybit: 1659.76
+[2023-08-19 15:34:21][INFO] Fetched price for ETH/USDT from bitstamp: 1658.8
+[2023-08-19 15:34:44][INFO] Initialized bybit successfully.
+[2023-08-19 15:34:44][INFO] Initialized bitstamp successfully.
+[2023-08-19 15:34:50][INFO] Fetched price for BTC/USDT from bybit: 25901.96
+[2023-08-19 15:34:51][INFO] Fetched price for ETH/USDT from bybit: 1659.8
+[2023-08-19 15:34:51][INFO] Fetched price for BTC/USDT from bitstamp: 25896.0
+[2023-08-19 15:34:51][INFO] Fetched price for ETH/USDT from bitstamp: 1660.2
