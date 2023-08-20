@@ -17,10 +17,17 @@ opportunities = arbitrage_analyzer.find_opportunities(['bybit', 'bitstamp'])
 initial_balance = 1000  # Початковий баланс для імітаційної торгівлі
 simulation_trading = SimulationTrading(exchange_api, arbitrage_analyzer, initial_balance)
 
-for a in range(0, 5):
-    time.sleep(60)
-    simulation_trading.run_simulation(['bybit', 'bitstamp'])
+simulation_trading.exchanges = simulation_trading.convert_balance()
 
+print(simulation_trading.exchanges)
+
+for a in range(0, 10):
+    simulation_trading.run_simulation(['bybit', 'bitstamp'])
+    print(simulation_trading.exchanges)
+    time.sleep(30)
+
+simulation_trading.revert_to_dollars()
+print(simulation_trading.exchanges)
 
 
 """
