@@ -480,8 +480,10 @@ class SimulationTrading:
                     
         return self.exchanges
 
-    def convert_to_usd(self, price, price_usdt):
-        return price * price_usdt
+    def calculate_precent(self, exchange):
+        capital = self.get_exchange_balance(exchange)
+        precent = 0.1
+        return capital * precent
     
     def run_simulation(self, list_name_exchenges):
         self.logger.info("Starting the simulation...")
@@ -496,16 +498,20 @@ class SimulationTrading:
         op = opportunities[0]
         
         # Симулюємо покупку
-        balance_exchenges = self.get_exchange_balance(op["buy_exchange"])
-        buy_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges)
-        buy_amount_usdt = self.convert_to_usd( buy_amount_coin, op["buy_price"])
+        #balance_exchenges = self.get_exchange_balance(op["buy_exchange"])
+        #buy_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges)
+        #buy_amount_usdt = self.convert_to_usd( buy_amount_coin, op["buy_price"])
+
+        buy_amount_usdt = self.calculate_precent(op["buy_exchange"])
         self.logger.info(f"Simulating buying {buy_amount_usdt} {op['currency']} on {op['buy_exchange']} at price {op['buy_price']} USDT.")
         self.simulate_buy(op['currency'], buy_amount_usdt, op)
         
         # Симулюємо продаж
-        balance_exchenges_sell = self.get_exchange_balance(op["sell_exchange"])
-        sell_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges_sell)
-        sell_amount_usdt = self.convert_to_usd(sell_amount_coin, op["sell_price"])
+        #balance_exchenges_sell = self.get_exchange_balance(op["sell_exchange"])
+        #sell_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges_sell)
+        #sell_amount_usdt = self.convert_to_usd(sell_amount_coin, op["sell_price"])
+        
+        sell_amount_usdt = self.calculate_precent(op["buy_exchange"]) 
         self.logger.info(f"Simulating selling {sell_amount_usdt} {op['currency']} on {op['sell_exchange']} at price {op['sell_price']} USDT.")
         self.simulate_sell(op['currency'], sell_amount_usdt, op)
 
