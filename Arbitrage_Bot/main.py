@@ -1,6 +1,8 @@
 import os
 import time
 
+start_time = time.time()
+
 # Ваші класи
 from utility.arbitrage_file import ExchangeAPI, ArbitrageAnalyzer, ConfigManager, TransactionManager, NotificationManager, SimulationTrading
 
@@ -9,30 +11,21 @@ path_congfig = os.path.join(path_file, "config/config.json")
 config = ConfigManager(path_congfig)
 
 exchange_api = ExchangeAPI(config)
+transaction = TransactionManager(exchange_api)
 arbitrage_analyzer = ArbitrageAnalyzer(exchange_api, config)
 
 opportunities = arbitrage_analyzer.find_opportunities(['bybit', 'bitstamp'])
 
 # 2. Створення екземпляра SimulationTrading
-initial_balance = 10000  # Початковий баланс для імітаційної торгівлі
-simulation_trading = SimulationTrading(exchange_api, arbitrage_analyzer, initial_balance)
+initial_balance = 6000  # Початковий баланс для імітаційної торгівлі
+simulation_trading = SimulationTrading(exchange_api, arbitrage_analyzer, transaction, initial_balance)
 
-simulation_trading.exchanges = simulation_trading.convert_balance()
+simulation_trading.run_simulation(['bybit', 'bitstamp'])
 
-print(simulation_trading.exchanges)
-
-for a in range(0, 50):
-    simulation_trading.run_simulation(['bybit', 'bitstamp'])
-    print(simulation_trading.exchanges)
-    time.sleep(30)
-
-    if simulation_trading.get_exchange_balance("bybit") == 0 or simulation_trading.get_exchange_balance("bitstamp") == 0:
-        break
-
-
-simulation_trading.revert_to_dollars()
-print(simulation_trading.exchanges['bybit']['balance'] + simulation_trading.exchanges['bitstamp']['balance'])
-
+elapsed_time = time.time() - start_time
+mins, secs = divmod(elapsed_time, 60)
+time_format = "{:0>2}:{:0>5.2f}".format(int(mins), secs)
+print(time_format, end='\r')
 
 """
 
@@ -49,8 +42,6 @@ print('\n')
 send_message = NotificationManager()
 
 # Ініціалізація ArbitrageAnalyzer
-
-transaction = TransactionManager(exchange_api)
 
 # Фільтрація можливостей на основі ліквідності (зараз просто повертає всі можливості)
 filtered_opportunities = analyzer.filter_liquid_markets(opportunities)

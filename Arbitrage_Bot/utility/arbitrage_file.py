@@ -205,19 +205,25 @@ class ArbitrageAnalyzer:
         sell_price = opportunity['sell_price']
         return sell_price - buy_price
     
-    def calculate_trade_amount(self, opportunity, capital):
-        risk_management = self.config_manager.get_risk_management()
-        max_position = risk_management.get('max_position_size')
-        max_loss = risk_management.get('max_loss')
+    def calculate_trade_amount(self, opportunity, balance, ):
+        # Визначаємо максимальний розмір позиції на основі відсотка від балансу
+        
+        max_trade_balance_percentage = self.config_manager.get_risk_management()['max_trade_balance_percentage']
+        max_position_size = balance * max_trade_balance_percentage
 
-        # Розрахунок максимальної можливої втрати в доларах
-        max_dollar_loss = capital * max_loss
+        # Визначаємо розмір позиції на основі різниці в ціні
+        price_difference = opportunity['sell_price'] - opportunity['buy_price']
+        trade_amount_based_on_difference = price_difference * self.config_manager.get_risk_parameters()['price_difference_threshold']
 
-        price_difference = self.calculate_profit(opportunity)
-        # Розрахунок об'єму угоди на основі різниці в цінах та максимальної втрати
-        amount = min(max_dollar_loss / price_difference, max_position)
+        # Вибираємо менший з двох розмірів позицій
+        trade_amount = min(max_position_size, trade_amount_based_on_difference)
 
-        return amount
+        # Перевірка на максимальний розмір позиції з конфігураційного файлу
+        max_position_size_from_config = self.config_manager.get_risk_management()['max_position_size']
+        if trade_amount > max_position_size_from_config:
+            trade_amount = max_position_size_from_config
+
+        return trade_amount
     
     def close_logger(self):
         for handler in self.logger.handlers:
@@ -258,6 +264,11 @@ class TransactionManager:
     def get_best_opportunity(self, opportunities):
         # Вибираємо найкращу можливість на основі різниці в цінах
         best_opportunity = max(opportunities, key=lambda x: x['sell_price'] - x['buy_price'])
+
+        if best_opportunity['sell_price'] <= best_opportunity['buy_price']:
+            print("No profitable arbitrage opportunity found.")
+            return None
+
         return best_opportunity
 
     def execute_best_trade(self, opportunities):
@@ -398,6 +409,9 @@ class ConfigManager:
     def get_risk_management(self):
         return self.get("risk_management", {})
 
+    def get_risk_parameters(self):
+        return self.get("risk_parameters", {})
+
     def close_logger(self):
         for handler in self.logger.handlers:
             handler.close()
@@ -405,16 +419,17 @@ class ConfigManager:
 
 class SimulationTrading:
 
-    def __init__(self, exchange_api, arbitrage_analyzer, initial_balance):
+    def __init__(self, exchange_api, arbitrage_analyzer, transaction_manager, initial_balance):
         self.exchange_api = exchange_api
         self.logger = setup_class_logger(self.__class__.__name__)
         self.arbitrage_analyzer = arbitrage_analyzer
+        self.transaction_manager = transaction_manager
         self.conversion_prices = {}
         self.initial_balance = initial_balance
         self.exchanges = None
         self.logger.info("SimulationTrading initiated with an honorable balance: %s", initial_balance)
 
-    def convert_balance(self):
+    def create_balance(self):
         self.logger.info("Convert start balacne: %s", self.initial_balance)
         exchange_balances = {}
         exchange_list = list(self.exchange_api.exchanges.keys())
@@ -456,9 +471,7 @@ class SimulationTrading:
             final_balances = {"balance": balance_remaining}
             final_balances.update(balances)
             exchange_balances[exchange] = final_balances
-
-        return exchange_balances
-
+            self.exchanges = exchange_balances
 
     def revert_to_dollars(self):
         self.logger.info("Convert to dollars")
@@ -479,14 +492,25 @@ class SimulationTrading:
                     balances[currency] = 0  # Зануляємо баланс валюти після конвертації
                     
         return self.exchanges
-
-    def calculate_precent(self, exchange):
-        capital = self.get_exchange_balance(exchange)
-        precent = 0.1
-        return capital * precent
     
-    def run_simulation(self, list_name_exchenges):
+    def convert_coin(self, coin, exchange, balance_coin):
+        currency = self.exchange_api.get_price(coin, exchange)
+        
+        suma_balance = (balance_coin / currency)
+
+        resoult = [coin]
+        resoult.append(suma_balance)
+
+        self.exchanges[exchange]["balance"] -= balance_coin
+
+        return resoult
+    
+    def convert_to_usd(self, coin, price):
+        return coin * price
+    
+    def run_simulation(self, list_name_exchenges, cicle=1):
         self.logger.info("Starting the simulation...")
+        self.create_balance()
 
         # Крок 1: Виконання торгових операцій
         self.logger.info("Step 1: Executing trading operations...")
@@ -495,25 +519,34 @@ class SimulationTrading:
         if not opportunities:
             self.logger.warning("No arbitrage opportunities found.")
 
-        op = opportunities[0]
+        op = self.transaction_manager.get_best_opportunity(opportunities)
         
         # Симулюємо покупку
-        #balance_exchenges = self.get_exchange_balance(op["buy_exchange"])
-        #buy_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges)
-        #buy_amount_usdt = self.convert_to_usd( buy_amount_coin, op["buy_price"])
-
-        buy_amount_usdt = self.calculate_precent(op["buy_exchange"])
+        balance_exchenges = self.get_exchange_balance(op["buy_exchange"])
+        buy_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges)
+        buy_amount_usdt = self.convert_to_usd( buy_amount_coin, op["buy_price"])
+        self.logger.info(f"USDT buy {buy_amount_usdt} coin {op['currency']}")
         self.logger.info(f"Simulating buying {buy_amount_usdt} {op['currency']} on {op['buy_exchange']} at price {op['buy_price']} USDT.")
         self.simulate_buy(op['currency'], buy_amount_usdt, op)
         
         # Симулюємо продаж
-        #balance_exchenges_sell = self.get_exchange_balance(op["sell_exchange"])
-        #sell_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges_sell)
-        #sell_amount_usdt = self.convert_to_usd(sell_amount_coin, op["sell_price"])
-        
-        sell_amount_usdt = self.calculate_precent(op["buy_exchange"]) 
+        balance_exchenges_sell = self.get_exchange_balance(op["sell_exchange"])
+        sell_amount_coin = self.arbitrage_analyzer.calculate_trade_amount(op, balance_exchenges_sell)
+        sell_amount_usdt = self.convert_to_usd(sell_amount_coin, op["sell_price"])
+        self.logger.info(f"USDT sell {sell_amount_usdt} coin {op['currency']}")
         self.logger.info(f"Simulating selling {sell_amount_usdt} {op['currency']} on {op['sell_exchange']} at price {op['sell_price']} USDT.")
         self.simulate_sell(op['currency'], sell_amount_usdt, op)
+
+        self.revert_to_dollars()
+
+        self.convert_coin("ETH/USDT", "bybit", 100)
+
+        bybit = self.get_exchange_balance('bybit')
+        bitstamp = self.get_exchange_balance('bitstamp')
+
+        self.logger.info(f"Balance bybit exchange {bybit}")
+        self.logger.info(f"Balance bitstamp exchange {bitstamp}")
+        self.logger.info(f"All balance {bybit + bitstamp}")
 
     def simulate_buy(self, currency_pair, usd_amount, opportunities):
         base_currency, quote_currency = currency_pair.split('/')

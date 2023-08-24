@@ -9,9 +9,15 @@
             "api_secret": "J8mTCaPbcR3UEhutGlqEdPYZq0oZBYV0"
         }
     },
+    "polling_interval": 10,
     "risk_management": {
-        "max_position_size": 0.1,
-        "max_loss": 0.001
+        "max_trade_balance_percentage": 0.01,
+        "max_position_size": 0.05,
+        "max_loss": 0.1
+    },
+    "risk_parameters": {
+        "price_difference_threshold": 0.01,  
+        "large_trade_volume": 1      
     },
     "backup": {
         "backup_interval": 3600,
@@ -36,4 +42,5 @@
         "top_n": 10,
         "selected_assets": ["BTC/USDT", "ETH/USDT"]
     }
+    
 }

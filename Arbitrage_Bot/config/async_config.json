@@ -1,0 +1,26 @@
+{
+    "exchanges": {
+        "bybit": {
+            "api_key": "MRCvcVgynpuFY3HWvP",
+            "api_secret": "k3WKnSKEQs5a3mceSLOpdhVyLxVMuEodfqF2"
+        },
+        "bitstamp": {
+            "api_key": "vKOGmuHBD5bT4rFeblW1RZaqhSRluzoZ",
+            "api_secret": "J8mTCaPbcR3UEhutGlqEdPYZq0oZBYV0"
+        }
+    },
+    "polling_interval": 10,
+    "risk_management": {
+        "max_position_size": 0.1,
+        "max_loss": 0.001
+    },
+    "transaction": {
+        "fee": 0.01
+    },
+    "arbitrage": {
+        "min_price_difference": 0.01
+    },
+    "currency_pairs": {
+        "selected_assets": ["BTC/USDT", "ETH/USDT"]
+    }
+}
